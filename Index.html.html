@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candidate Results Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: white;
+      color: black;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    h2 {
+      color: #003366;
+      font-weight: normal;
+    }
+    label {
+      display: inline-block;
+      width: 80px;
+    }
+    input[type="text"], input[type="password"] {
+      width: 200px;
+      padding: 5px;
+      margin: 5px 0;
+    }
+    button {
+      background-color: #c2dfff;
+      border: 1px solid #337ab7;
+      padding: 5px 20px;
+      cursor: pointer;
+    }
+    .info-text {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    .footer-text {
+      font-size: 10px;
+      margin-top: 20px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Candidate<span style="color:#003366;">Results</span></h2>
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/88/University_of_Cambridge_coat_of_arms.svg/1024px-University_of_Cambridge_coat_of_arms.svg.png" alt="Cambridge Logo" style="width:80px;float:right;"/>
+    <h3>CAMBRIDGE International Education</h3>
+    <div style="background-color:#0053a5; padding: 15px; color: white;">
+      <p>Enter your login details to access your results:</p>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" /><span style="font-size:10px;"> (as provided by your centre)</span>
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" />
+        <button type="submit">login</button>
+      </form>
+      <p>If you are having difficulty logging in, please contact your Centre.</p>
+    </div>
+    <div class="footer-text">
+      <p>
+        Cambridge International Education is the name of our awarding body and a part of Cambridge University Press & Assessment, but you may know us as Cambridge. See our <a href="#" target="_blank">Legal Notice</a> for more information.
+      </p>
+      <p>
+        Use of this website (site) is governed by our <a href="#" target="_blank">Website Terms</a> which explain how you can, and cannot, use the Site and its content, or any other Cambridge websites which link to this page. Any additional terms of use for this Site are contained in the Cambridge Handbook.
+      </p>
+      <p>These terms were last updated December 2023.</p>
+      <p>© 2023 Cambridge University Press & Assessment</p>
+      <p>Version 3.0.2-SNAPSHOT</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (username === 'abrarzarif2773' && password === 'qwe213') {
+        // Store user info in sessionStorage to access on results page
+        sessionStorage.setItem('loggedInUser', 'MD ABRAR ZARIF');
+        window.location.href = 'results.html';
+      } else {
+        alert('Invalid username or password.');
+      }
+    });
+  </script>
+</body>
+</html>

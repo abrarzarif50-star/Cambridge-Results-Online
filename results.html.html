@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AS Level Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: white;
+      color: black;
+    }
+    h2 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+    .results {
+      border: 1px solid #ccc;
+      padding: 10px;
+      max-width: 400px;
+    }
+    .subject {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Name: <span id="usernameDisplay"></span></h2>
+  <h3>AS Level results</h3>
+  <div class="results">
+    <div class="subject">Physics B (78%)</div>
+    <div class="subject">Pure Mathematics And Statistics B (78%)</div>
+  </div>
+
+  <script>
+    // Check if user is logged in
+    const user = sessionStorage.getItem('loggedInUser');
+    if (!user) {
+      alert('Access denied. Please login...');
+      window.location.href = 'index.html';
+    } else {
+      document.getElementById('usernameDisplay').textContent = user;
+    }
+  </script>
+</body>
+</html>
